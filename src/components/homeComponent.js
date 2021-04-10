@@ -34,6 +34,24 @@ export const UserMain = (props) => {
 };
 
 export const UserAvatar = (props) => {
+    moment.updateLocale('en', {
+        relativeTime : {
+            future: "in %s",
+            past:   "%s ago",
+            s  : '1s',
+            ss : '%ds',
+            m:  "1m",
+            mm: "%dm",
+            h:  "1h",
+            hh: "%dh",
+            d:  "1d",
+            dd: "%dd",
+            M:  "1mo",
+            MM: "%dmo",
+            y:  "1y",
+            yy: "%dy"
+        }
+    });
     return (
         <div className={`userAvatar ${props.isV2 ? "version2" : ""}`}>
             <div
