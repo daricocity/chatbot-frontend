@@ -93,20 +93,20 @@ const Home = (props) => {
                             profilePicture={userdetail.profile_picture ? userdetail.profile_picture.file_upload : ""}
                         />
                         <div>
-                            <img src={settings} onClick={() => {setShowProfile(true); closeSideBar(); }} />
+                            <img src={settings} onClick={() => {setShowProfile(true); closeSideBar(); }} alt="setpics" />
                             <div className="mobile">
                                 &nbsp;&nbsp;&nbsp;&nbsp;
-                                <img src={close} alt="" onClick={toggleSideBar} style={{width:15}}/>
+                                <img src={close} onClick={toggleSideBar} style={{width:15}} alt="closepics"/>
                             </div>
                         </div>
                     </div>
                     <UsersList/>
                     <div className="logout" onClick={() => logout(props)}>
-                        <img src={logoutPng} />
+                        <img src={logoutPng} alt="logpics"/>
                         <div> Logout </div>
                     </div>
                     <div className="colorChange">
-                        <img src={settings} />
+                        <img src={settings} alt="settpics" />
                         <div> Dark </div>
                     </div>
                 </div>
@@ -118,7 +118,7 @@ const Home = (props) => {
                         <div>
                             <div className="heading mobile">
                                 <div style={{height:"100%"}} className="flex align-center">
-                                    <img src={menu} alt="" onClick={toggleSideBar}/>&nbsp;&nbsp;
+                                    <img src={menu} onClick={toggleSideBar} alt="menpics"/>&nbsp;&nbsp;
                                 </div>
                             </div>
                             <div className="noUser">Click on a user to start chat</div>

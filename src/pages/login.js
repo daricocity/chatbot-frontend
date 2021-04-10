@@ -73,7 +73,7 @@ const Login = (props) => {
                     />
                     <div className='grid grid-2 grid-gap-2'>
                         <div className='socialButton'>
-                            <img src={twitter} alt="twitter" /> <span>Twitter</span>
+                            <img src={twitter} alt="twitter"/> <span>Twitter</span>
                         </div>
                         <div className='socialButton'>
                             <img src={google} alt="google" /> <span>Google</span>

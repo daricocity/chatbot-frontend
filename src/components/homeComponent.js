@@ -163,7 +163,7 @@ export const ProfileModal = (props) => {
                                 ) : (
                                     <div className="point" onClick={() => profileRef.click()}>
                                         Change Picture
-                                        <img src={edit} />
+                                        <img src={edit} alt="editpics" />
                                     </div>
                                 )}
                                 </>

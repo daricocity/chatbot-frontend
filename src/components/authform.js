@@ -44,7 +44,7 @@ const AuthForm = (props) => {
                         autoComplete='new-password'
                         required 
                     />
-                    <img src={!props.showPassword ? eyeopen : eyeclose} onClick={() => props.setShowPassword(!props.showPassword)} alt="close" />
+                    <img src={!props.showPassword ? eyeopen : eyeclose} onClick={() => props.setShowPassword(!props.showPassword)} alt="closeing" />
                 </div>
                 {props.login && (
                     <div className='flex justify-end'>

@@ -191,7 +191,7 @@ function ChatInterface(props) {
             <div className="flex align-center justify-between heading">
                 <div className="flex align-center">
                     <div className="mobile">
-                        <img src={menu} alt="" onClick={props.toggleSideBar}/>&nbsp;&nbsp;
+                        <img src={menu} alt="" onClick={props.toggleSideBar} alt="menpics"/>&nbsp;&nbsp;
                     </div>
                     <UserAvatar 
                         name={`${props.activeUser.first_name || ""} ${props.activeUser.last_name || ""}`} 
@@ -201,8 +201,8 @@ function ChatInterface(props) {
                     />
                 </div>
                 <div className="flex align-center rightItems">
-                    <img src={isFavorite ? favoriteActive : favorite} onClick={updateFav} />
-                    <img src={settings} onClick={() => props.setShowProfileModal(true)} />
+                    <img src={isFavorite ? favoriteActive : favorite} onClick={updateFav} alt="favpics" />
+                    <img src={settings} onClick={() => props.setShowProfileModal(true)} alt="settipics" />
                 </div>
             </div>
             <div className="chatArea" id="chatArea" onScroll={handleScroll}>
@@ -225,8 +225,8 @@ function ChatInterface(props) {
             </div>
             <form onSubmit={submitMessage} className="messageZone">
                 <div className="flex align-center justify-between topPart">
-                    <img src={smiley} />
-                    <button type="submit"><img className="sendButton" src={send} /></button>
+                    <img src={smiley} alt="smilpics"/>
+                    <button type="submit"><img className="sendButton" src={send} alt="sendipics" /></button>
                 </div>
                 <input 
                     placeholder="Type your message here... "

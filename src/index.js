@@ -1,5 +1,5 @@
 import './style.scss';
-import App from './App';
+// import App from './App';
 import React from 'react';
 import Router from './router';
 import ReactDOM from 'react-dom';

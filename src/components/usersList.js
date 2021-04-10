@@ -135,7 +135,7 @@ const SearchDebounce = (props) => {
     }, [search])
     return(
         <div className="searchCon">
-            <img src={searchImg} />
+            <img src={searchImg} alt="searpics" />
             <input placeholder="Search User" value={search} onChange={(e) => setSearch(e.target.value)} />
         </div>
     )
