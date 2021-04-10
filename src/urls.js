@@ -1,0 +1,12 @@
+const BASE_URL = 'https://api.tuk2me.com/';
+export const ME_URL = BASE_URL + 'account/me';
+export const LOGIN_URL = BASE_URL + 'account/login';
+export const LOGOUT_URL = BASE_URL + 'account/logout';
+export const PROFILE_URL = BASE_URL + 'account/profile';
+export const REFRESH_URL = BASE_URL + 'account/refresh';
+export const MESSAGE_URL = BASE_URL + 'message/message';
+export const REGISTER_URL = BASE_URL + 'account/register';
+export const FILE_UPLOAD_URL = BASE_URL + 'message/file-upload';
+export const READ_MESSAGE_URL = BASE_URL + "message/read-messages"
+export const CHECK_FAVORITE_URL = BASE_URL + 'account/check-favorite/';
+export const UPDATE_FAVORITE_URL = BASE_URL + 'account/update-favorite/';
