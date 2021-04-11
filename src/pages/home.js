@@ -92,7 +92,7 @@ const Home = (props) => {
                             name={`${userdetail.first_name || ""} ${userdetail.last_name || ""}`} 
                             profilePicture={userdetail.profile_picture ? userdetail.profile_picture.file_upload : ""}
                         />
-                        <div>
+                        <div className="flex">
                             <img src={settings} onClick={() => {setShowProfile(true); closeSideBar(); }} alt="setpics" />
                             <div className="mobile">
                                 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -121,7 +121,7 @@ const Home = (props) => {
                                     <img src={menu} onClick={toggleSideBar} alt="menpics"/>&nbsp;&nbsp;
                                 </div>
                             </div>
-                            <div className="noUser">Click on a user to start chat</div>
+                            <div className="noUserChat">Click on a user to start chat</div>
                         </div>
                     )}
                 </div>

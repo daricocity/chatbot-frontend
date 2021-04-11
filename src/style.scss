@@ -4,12 +4,32 @@
 $primaryFont: 'Poppins', sans-serif;
 $secondaryFont: 'Poller One', cursive;
 
-$primaryColor: #2D2E57;
-$secondaryColor: #EC6982;
-$primaryColorLight: #33345F;
+// NORMAL COLOR LAYOUT
+// $primaryColor: #2D2E57;
+// $secondaryColor: #EC6982;
+// $primaryColorLight: #33345F;
+// $textColor: white;
+// $chatBubble: #3d4067;
+// $searchConColor: #3b3b65;
+// $chatBubbleSender: #2D2E57;
 
-$primaryChangeColor: #101010;
-$primaryChangeColorLight: #212529;
+// LIGTH COLOR LAYOUT
+$primaryColor: #F4F5FA;
+$secondaryColor: #EC6982;
+$primaryColorLight: #FFFFFF;
+$textColor: #2D2E57;
+$chatBubble: #fff;
+$searchConColor: #F4F5FA;
+$chatBubbleSender: #fff;
+
+// BLACK COLOR LAYOUT
+// $primaryColor: #101010;
+// $secondaryColor: #EC6982;
+// $primaryColorLight: #212529;
+// $textColor: #fff;
+// $chatBubble: #2D2E57;
+// $searchConColor: #F4F5FA;
+// $chatBubbleSender: #fff;
 
 html,
 body {
@@ -88,7 +108,7 @@ button {
     .title {
         font-size: 26px;
         text-align: center;
-        color: rgba(white, 0.65);
+        color: rgba($textColor, 0.65);
         margin-bottom: 50px;
     }
 
@@ -97,9 +117,9 @@ button {
         padding: 10px;
         background-color: transparent;
         border: none;
-        border-bottom: 1px solid rgba(white, 0.1);
+        border-bottom: 1px solid rgba($textColor, 0.1);
         outline: none;
-        color: white;
+        color: $textColor;
         box-sizing: border-box;
     }
 
@@ -130,7 +150,7 @@ button {
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
+        color: $textColor;
         font-size: 14px;
         cursor: pointer;
         img {
@@ -140,7 +160,7 @@ button {
     
     .switchOption {
         margin-top: 50px;
-        color: rgba(white, 0.33);
+        color: rgba($textColor, 0.33);
         text-align: center;
         b {
             font-weight: 500;
@@ -197,7 +217,7 @@ button {
         flex-direction: column;
   
         .heading {
-            border-bottom: 2px solid rgba(white, 0.1);
+            border-bottom: 2px solid rgba($textColor, 0.1);
             padding: 0 50px;
             height: 80px;
     
@@ -273,7 +293,7 @@ button {
 .searchCon {
     margin: 0 30px;
     margin-bottom: 30px;
-    background-color: #3b3b65;
+    background-color: $searchConColor;
     height: 35px;
     border-radius: 40px;
     position: relative;
@@ -282,12 +302,12 @@ button {
     input {
         width: 100%;
         height: 100%;
-        background-color: #3b3b65;
+        background-color: $searchConColor;
         border: none;
         outline: none;
         padding-left: 40px;
         box-sizing: border-box;
-        color: white;
+        color: $textColor;
     }
   
     img {
@@ -320,7 +340,7 @@ button {
     .name {
         font-size: 16px;
         font-weight: 500;
-        color: white;
+        color: $textColor;
     
         @media screen and (max-width: 480px) {
             font-size: 13px;
@@ -332,12 +352,16 @@ button {
         margin-top: -16px;
         margin-left: 150px;
         font-size: 10px;
-        color: rgba(white, 0.4);
+        color: rgba($textColor, 0.4);
+
+        @media screen and (max-width: 480px) {
+            margin-left: 100px;
+        }
     }
   
     .subContent {
         font-size: 12px;
-        color: rgba(white, 0.4);
+        color: rgba($textColor, 0.4);
     
         @media screen and (max-width: 480px) {
             font-size: 10px;
@@ -357,14 +381,7 @@ button {
         }
         .subContent {
             font-size: 10px;
-            color: rgba(white, 0.4);
-        }
-        .subContentOnline {
-            position: relative;
-            margin-top: -16px;
-            margin-left: 100px;
-            font-size: 10px;
-            color: rgba(white, 0.4);
+            color: rgba($textColor, 0.4);
         }
     }
 }
@@ -387,7 +404,7 @@ button {
         align-items: center;
         justify-content: center;
         font-size: 11px;
-        color: white;
+        color: $textColor;
     }
 }
 
@@ -397,13 +414,15 @@ button {
     .chatbubble {
         max-width: 600px;
         padding: 10px;
-        background-color: #3d4067;
-        color: white;
+        background-color: $chatBubble;
+        color: $textColor;
         margin-bottom: 15px;
         border-radius: 4px;
         font-size: 12px;
         display: flex;
         flex-direction: column;
+        // Just added
+        box-shadow: 0 1px 15px 1px rgba(62, 57, 107, 0.5);
     
         p {
             margin: 0;
@@ -412,7 +431,7 @@ button {
         .time {
             font-size: 10px;
             margin-top: 5px;
-            color: rgba(white, 0.5);
+            color: rgba($textColor, 0.5);
             align-self: flex-end;
         }
     }
@@ -421,6 +440,13 @@ button {
         justify-content: flex-end;
         .chatbubble {
             background-color: $secondaryColor;
+            // Just added
+            color: $chatBubbleSender;
+            box-shadow: 0 1px 15px 1px rgba(255, 57, 107, 0.5);
+        }
+        // Just added
+        .time {
+            color: rgba($chatBubbleSender, 0.7);
         }
     }
 }
@@ -440,7 +466,7 @@ button {
 }
 
 .messageZone {
-    border-top: 2px solid rgba(white, 0.1);
+    border-top: 2px solid rgba($textColor, 0.1);
     height: 150px;
     padding: 10px 40px;
     box-sizing: border-box;
@@ -465,7 +491,7 @@ button {
         height: 50px;
         box-sizing: border-box;
         outline: none;
-        color: white;
+        color: $textColor;
 
         @media screen and (max-width: 480px) {
             margin-top: 10px;
@@ -493,7 +519,7 @@ button {
     left: 30px;
   
     font-size: 10px;
-    color: rgba(white, 0.1);
+    color: rgba($textColor, 0.1);
 }
 
 .colorChange {
@@ -502,7 +528,7 @@ button {
     left: 100px;
   
     font-size: 10px;
-    color: rgba(white, 0.1);
+    color: rgba($textColor, 0.1);
 }
 
 .modalContain {
@@ -531,9 +557,9 @@ button {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            color: rgba(white, 0.66);
+            color: rgba($textColor, 0.66);
             font-size: 15px;
-            border-bottom: 1px solid rgba(white, 0.05);
+            border-bottom: 1px solid rgba($textColor, 0.05);
     
             img {
                 width: 15px;
@@ -574,7 +600,7 @@ button {
                         font-size: 12px;
                         display: flex;
                         align-items: center;
-                        color: rgba(white, 0.5);
+                        color: rgba($textColor, 0.5);
                         cursor: pointer;
             
                         img {
@@ -594,7 +620,7 @@ button {
                         margin-bottom: 20px;
                         span {
                             font-size: 13px;
-                            color: rgba(white, 0.5);
+                            color: rgba($textColor, 0.5);
                         }
         
                         input,
@@ -607,7 +633,7 @@ button {
                             outline: none;
                             background-color: $primaryColorLight;
                             border: none;
-                            color: white;
+                            color: $textColor;
                         }
         
                         textarea {
@@ -655,7 +681,7 @@ button {
 .loader {
     width: 30px;
     height: 30px;
-    border: 2px solid white;
+    border: 2px solid $textColor;
     border-left-color: transparent;
     border-bottom-color: transparent;
     border-right-color: transparent;
@@ -680,7 +706,7 @@ button {
 
 .errorHolder {
     background-color: red;
-    color: white;
+    color: $textColor;
     padding: 10px;
     position: relative;
     margin-bottom: 20px;
@@ -696,7 +722,11 @@ button {
 
 .noUser{
     font-size: 14px;
-    color: white;
+    color: $textColor;
+}
+
+.noUserChat{
+    text-align: center;
 }
 
 .clickable {
@@ -712,6 +742,6 @@ button {
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: rgba(white, 0.1);
+    background-color: rgba($textColor, 0.1);
     border-radius: 50px;
 }

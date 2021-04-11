@@ -64,7 +64,7 @@ export const UserAvatar = (props) => {
             <div className="contents">
                 <div className="name">{props.name}</div>
                 {!props.noStatus && <div className="subContent">{truncate(props.caption)}</div>}
-                {<div className="subContentOnline">{props.isOnline ? moment(props.isOnline).fromNow() : ""} </div>}
+                {props.lastSeen && <div className="subContentOnline">{props.isOnline ? moment(props.isOnline).fromNow() : ""} </div>}
             </div>
         </div>
     );
@@ -162,7 +162,7 @@ export const ProfileModal = (props) => {
         <div className={`modalContain ${props.visible ? "open" : ""}`}>
             <div className="content-inner">
                 <div className="header">
-                    <div className="title"> Update Profile</div>
+                    <div className="title">{props.view ? "Profile" : "Update Profile"}</div>
                     {props.closable && <img src={close} onClick={props.close} alt="close" />}
                 </div>
                 <form className="content" onSubmit={submit} >
