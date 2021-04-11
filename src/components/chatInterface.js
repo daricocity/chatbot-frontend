@@ -16,14 +16,15 @@ import { MESSAGE_URL, CHECK_FAVORITE_URL, UPDATE_FAVORITE_URL, READ_MESSAGE_URL 
 let goneNext = false;
 
 function ChatInterface(props) {
-    const [ message, setMessage ] = useState('');
+    const [ message, setMessage ] = useState("");
     const [ messages, setMessages ] = useState([]);
     const [ fetching, setFetching ] = useState(true);
     const [ nextPage, setNextPage ] = useState(1);
     const [ canGoNext, setCanGoNext ] = useState(false);
     const [ isFavorite, setIsFavorite ] = useState(false);
-    const { state:{ activeChat }, dispatch } = useContext(store);
     const [shouldHandleScroll, setShouldHandleScroll] = useState(false);
+
+    const { state:{ activeChat }, dispatch } = useContext(store);
 
     const checkIsFav = async () => {
         const token = await getToken();
@@ -37,24 +38,9 @@ function ChatInterface(props) {
         }
     }
 
-    // Update Favorite
-    const updateFav = async () => {
-        setIsFavorite(!isFavorite);
-        const token = await getToken();
-        const result = await axiosHandler({
-            method: "post",
-            url: UPDATE_FAVORITE_URL,
-            data: {favorite_id: props.activeUser.user.id},
-            token
-        }).catch(e => console.log(errorHandler(e)));
-        if(!result){
-            setIsFavorite(!isFavorite);
-        }
-    }
-
     // Get messages from backend
     const getMessages = async (append=false, page) => {
-        setCanGoNext(true);
+        setCanGoNext(false);
         const token = await getToken();
         const result = await axiosHandler({
             method: "get",
@@ -88,8 +74,8 @@ function ChatInterface(props) {
             if(result.data.next){
                 setCanGoNext(true);
                 setNextPage(nextPage + 1);
-            };
-            setFetching(false);
+            }
+            setFetching(false)
             if(!append){
                 scrollToBottom();
                 setTimeout(() => setShouldHandleScroll(false), 1000);
@@ -123,6 +109,21 @@ function ChatInterface(props) {
         getMessages(false, 1);
         checkIsFav();
     }, [props.activeUser])
+
+    // Update Favorite
+    const updateFav = async () => {
+        setIsFavorite(!isFavorite);
+        const token = await getToken();
+        const result = await axiosHandler({
+            method: "post",
+            url: UPDATE_FAVORITE_URL,
+            data: {favorite_id: props.activeUser.user.id},
+            token
+        }).catch(e => console.log(errorHandler(e)));
+        if(!result){
+            setIsFavorite(!isFavorite);
+        }
+    }
 
     useEffect(() => {
         if(activeChat){

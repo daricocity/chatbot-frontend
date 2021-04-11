@@ -14,7 +14,7 @@ function UsersList(){
     const [ fetching, setFetching ] = useState(true);
     const [ nextPage, setNextPage ] = useState(1);
     const [ search, setSearch ] = useState("");
-    const [ canGoNext, setcanGoNext ] = useState(false);
+    const [ canGoNext, setCanGoNext ] = useState(false);
     const { state:{ triggerRefreshUserList }, dispatch } = useContext(store);
 
     useEffect(() => {
@@ -35,10 +35,10 @@ function UsersList(){
     const getUserList = async (append = false) => {
         // Search
         let extra = "";
-        if(search){
+        if(search !== ""){
             extra += `&keyword=${search}`
         }
-        setcanGoNext(false);
+        setCanGoNext(false);
         // Get user list
         const _token = await getToken();
         const _users = await axiosHandler({
@@ -49,7 +49,7 @@ function UsersList(){
         if(_users){
             if(_users.data.next){
                 setNextPage(nextPage + 1);
-                setcanGoNext(true);
+                setCanGoNext(true);
             }
             if(append){
                 setUsers([...users, ..._users.data.results]);
@@ -68,10 +68,11 @@ function UsersList(){
         if(lastUserChat){
             lastUserChat = JSON.parse(lastUserChat);
             if(users.filter(item => item.id === lastUserChat.id).length){
-                dispatch({
-                    type: activeChatUserAction,
-                    payload: lastUserChat
-                });
+                // dispatch({
+                //     type: activeChatUserAction,
+                //     payload: lastUserChat
+                // });
+                setActiveUser(lastUserChat);
             };
         };
     }
@@ -97,7 +98,6 @@ function UsersList(){
     return(
         <div>
             <SearchDebounce setSearch={setSearch} />
-            {console.log(users)}
             <div className="userList" onScroll={handleScroll}>
                 {fetching ? (
                     <div className="centerAll"><Loader/></div>
@@ -136,7 +136,7 @@ const SearchDebounce = (props) => {
     return(
         <div className="searchCon">
             <img src={searchImg} alt="searpics" />
-            <input placeholder="Search User" value={search} onChange={(e) => setSearch(e.target.value)} />
+            <input placeholder="Search users" value={search} onChange={(e) => setSearch(e.target.value)} />
         </div>
     )
 }

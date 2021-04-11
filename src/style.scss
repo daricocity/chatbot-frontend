@@ -702,3 +702,16 @@ button {
 .clickable {
     cursor: pointer;
 }
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    display: none;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(white, 0.1);
+    border-radius: 50px;
+}
