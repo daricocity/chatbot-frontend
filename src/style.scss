@@ -100,6 +100,10 @@ button {
     box-sizing: border-box;
     background-color: $primaryColor;
 
+    @media screen and (max-width: 480px) {
+        padding: 20px 20px;
+    }
+
     .inner {
         max-width: 400px;
         margin: 0 auto;
@@ -355,7 +359,7 @@ button {
         color: rgba($textColor, 0.4);
 
         @media screen and (max-width: 480px) {
-            margin-left: 100px;
+            margin-left: 110px;
         }
     }
   
@@ -545,12 +549,18 @@ button {
     transition: 0.3s ease;
     opacity: 0;
     visibility: hidden;
-  
+    
     .content-inner {
         background-color: $primaryColor;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         max-width: 700px;
         width: 100%;
+
+        @media screen and (max-width: 480px) {
+            width: 90%;
+            height: 100%;
+            margin-top: 20px;
+        }
   
         .header {
             padding: 20px;
@@ -565,18 +575,30 @@ button {
                 width: 15px;
                 cursor: pointer;
             }
+
+            @media screen and (max-width: 480px) {
+                padding: 15px 20px;
+            }
         }
   
         .content {
             padding: 20px;
             display: flex;
             flex-direction: column;
+
+            @media screen and (max-width: 480px) {
+                padding: 10px 20px;
+            }
   
             .inner {
                 display: flex;
                 max-width: 80%;
                 margin: 30px auto;
                 width: 100%;
+
+                @media screen and (max-width: 480px) {
+                    margin: 0px auto;
+                }
     
                 .leftHook {
                     flex: 1;
@@ -639,6 +661,10 @@ button {
                         textarea {
                             height: 100px;
                             padding: 10px;
+
+                            @media screen and (max-width: 480px) {
+                                height: 80px;
+                            }
                         }
                     }
                 }
