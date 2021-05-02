@@ -198,8 +198,6 @@ function ChatInterface(props) {
                         name={`${props.activeUser.first_name || ""} ${props.activeUser.last_name || ""}`} 
                         profilePicture={props.activeUser.profile_picture ? props.activeUser.profile_picture.file_upload : ""} 
                         caption={props.activeUser.caption}
-                        isOnline={props.activeUser.user.is_online}
-                        lastSeen
                     />
                 </div>
                 <div className="flex align-center rightItems">

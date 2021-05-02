@@ -17,11 +17,6 @@ const SocketService = () => {
                 type: activeChatAction,
                 payload: true
             });
-            // if(userDetail !== data.receiver) return;
-            // dispatch({
-            //     type: activeChatAction,
-            //     payload: data
-            // });
         });
     };
     useEffect(setupSocket, [userDetail]);
@@ -30,15 +25,21 @@ const SocketService = () => {
 
 export default SocketService;
 
-// const sendSocket = (data) => {
-//     socket.emit('command', {
-//         type: data.type,
-//         id: data.id,
-//         content: data.content,
-//     });
-// };
+const sendSocket = (data) => {
+    socket.emit('command', {
+        type: data.type,
+        id: data.id,
+        content: data.content,
+    });
+};
 
 export const sendTestSocket = (data) => {
     socket.emit("command", data);
 };
+
+// if(userDetail !== data.receiver) return;
+// dispatch({
+//     type: activeChatAction,
+//     payload: data
+// });
 

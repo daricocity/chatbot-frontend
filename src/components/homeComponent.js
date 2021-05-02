@@ -27,6 +27,8 @@ export const UserMain = (props) => {
                 profilePicture={props.profilePicture}
                 caption={props.caption}
                 isOnline={props.isOnline}
+                lastSeen={props.lastSeen}
+
             />
             { _count > 0 && <div className="counter">{props.count}</div> }
         </div>
@@ -61,10 +63,10 @@ export const UserAvatar = (props) => {
                     backgroundImage: `url("${props.profilePicture}")`,
                 }}
             />
+            <div className="onlineStatus"/>
             <div className="contents">
-                <div className="name">{props.name}</div>
+                <div className="name">{props.name} {props.lastSeen && <span className="subContentOnline"> - {props.isOnline ? moment(props.isOnline).fromNow(true) : ""}</span>} </div>
                 {!props.noStatus && <div className="subContent">{truncate(props.caption)}</div>}
-                {props.lastSeen && <div className="subContentOnline">{props.isOnline ? moment(props.isOnline).fromNow() : ""} </div>}
             </div>
         </div>
     );

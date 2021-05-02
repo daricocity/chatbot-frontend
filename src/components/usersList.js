@@ -114,6 +114,8 @@ function UsersList(){
                                 count={item.message_count} 
                                 clickable
                                 onClick={() => setActiveUser(item)}
+                                lastSeen
+                                isOnline={item.user.is_online}
                             />
                         ))
                     )
