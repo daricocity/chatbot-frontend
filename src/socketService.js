@@ -12,6 +12,8 @@ const SocketService = () => {
         socket = openSocket(SOCKET_URL);
         console.log(socket);
         socket.on("command", (data) => {
+            console.log(data);
+            console.log(userDetail);
             if(!userDetail) return;
             if(userDetail.id !== data.receiver) return;
             dispatch({
