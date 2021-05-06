@@ -10,6 +10,7 @@ const SocketService = () => {
     const { state:{ userDetail }, dispatch } = useContext(store);
     const setupSocket = () => {
         socket = openSocket(SOCKET_URL);
+        console.log(socket);
         socket.on("command", (data) => {
             if(!userDetail) return;
             if(userDetail.id !== data.receiver) return;
